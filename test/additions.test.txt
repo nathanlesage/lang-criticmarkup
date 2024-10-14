@@ -1,0 +1,39 @@
+# Simple addition
+
+This is some document{++ with an addition++}.
+
+==>
+
+CriticMarkup(
+  Addition(AdditionStart, AdditionEnd)
+)
+
+# Incomplete addition (end missing)
+
+This is a document with {++ an incomplete addition
+
+==>
+
+CriticMarkup(
+  Addition(AdditionStart,⚠)
+)
+
+# Incomplete addition (start missing)
+
+This is a document with an incomplete addition++}
+
+==>
+
+CriticMarkup(⚠(AdditionEnd))
+
+# Multiline addition
+
+This is a document with{++
+
+++}an inserted paragraph.
+
+==>
+
+CriticMarkup(
+  Addition(AdditionStart, AdditionEnd)
+)

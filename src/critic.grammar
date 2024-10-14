@@ -1,0 +1,27 @@
+@detectDelim
+@top CriticMarkup { statement* }
+
+statement {
+  Addition | Deletion | Substitution | Highlight | Comment | content
+}
+
+Addition { AdditionStart content* AdditionEnd }
+Deletion { DeletionStart content* DeletionEnd }
+Substitution { SubstitutionStart content* SubstitutionMiddle content* SubstitutionEnd }
+Highlight { HighlightStart content* HighlightEnd }
+Comment { CommentStart content* CommentEnd }
+
+@local tokens {
+  AdditionStart { "{++" }
+  AdditionEnd { "++}" }
+  DeletionStart { "{--" }
+  DeletionEnd { "--}" }
+  SubstitutionStart { "{~~" }
+  SubstitutionMiddle { "~>" }
+  SubstitutionEnd { "~~}" }
+  CommentStart { "{>>" }
+  CommentEnd { "<<}" }
+  HighlightStart { "{==" }
+  HighlightEnd { "==}" }
+  @else content
+}

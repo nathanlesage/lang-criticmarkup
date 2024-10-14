@@ -1,0 +1,39 @@
+# Simple deletion
+
+This is some document{-- with a deletion--}.
+
+==>
+
+CriticMarkup(
+  Deletion(DeletionStart, DeletionEnd)
+)
+
+# Incomplete deletion (end missing)
+
+This is a document with {-- an incomplete deletion
+
+==>
+
+CriticMarkup(
+  Deletion(DeletionStart,⚠)
+)
+
+# Incomplete addition (start missing)
+
+This is a document with an incomplete deletion--}
+
+==>
+
+CriticMarkup(⚠(DeletionEnd))
+
+# Multiline deletion
+
+This is a document with{--
+
+--}a deleted paragraph.
+
+==>
+
+CriticMarkup(
+  Deletion(DeletionStart, DeletionEnd)
+)

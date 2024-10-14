@@ -1,0 +1,28 @@
+{
+  "name": "lang-criticmarkup",
+  "version": "0.1.0",
+  "description": "A Lezer grammar and Codemirror language package for CriticMarkup",
+  "main": "dist/index.js",
+  "author": "Hendrik Erz <hendrik@zettlr.com>",
+  "license": "GPL-3.0-only",
+  "private": false,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "generate-grammar": "lezer-generator -o src/critic.js src/critic.grammar",
+    "build": "tsc",
+    "test": "mocha test/index.js"
+  },
+  "devDependencies": {
+    "@lezer/generator": "^1.7.1",
+    "@types/node": "^22.7.5",
+    "mocha": "^10.7.3",
+    "typescript": "4.x.x"
+  },
+  "dependencies": {
+    "@codemirror/language": "^6.10.3",
+    "@lezer/lr": "^1.4.2"
+  }
+}

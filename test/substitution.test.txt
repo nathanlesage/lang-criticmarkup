@@ -1,0 +1,47 @@
+# Simple substitution
+
+This is some document with a substitution{~~.~>!~~}
+
+==>
+
+CriticMarkup(
+  Substitution(SubstitutionStart, SubstitutionMiddle, SubstitutionEnd)
+)
+
+# Incomplete substitution (end missing)
+
+This is a document with {~~an incomplete substitution~>
+
+==>
+
+CriticMarkup(
+  Substitution(SubstitutionStart, SubstitutionMiddle, ⚠)
+)
+
+# Incomplete substitution (start missing)
+
+This is a document with an incomplete substitution~>.~~}
+
+==>
+
+CriticMarkup(Substitution(⚠,SubstitutionMiddle, SubstitutionEnd))
+
+# Incomplete substitution (middle missing)
+
+This is a document with an {~~incomplete substitution .~~}
+
+==>
+
+CriticMarkup(Substitution(SubstitutionStart, ⚠, SubstitutionEnd))
+
+# Multiline substitution
+
+This is a document with{~~
+
+~>--~~}a a multiline substitution.
+
+==>
+
+CriticMarkup(
+  Substitution(SubstitutionStart, SubstitutionMiddle, SubstitutionEnd)
+)
