@@ -1,6 +1,6 @@
 {
   "name": "lang-criticmarkup",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A Lezer grammar and Codemirror language package for CriticMarkup",
   "main": "dist/index.js",
   "author": "Hendrik Erz <hendrik@zettlr.com>",
