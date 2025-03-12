@@ -72,7 +72,28 @@ const mixedParser = markdownLanguage.parser.configure({
   })
 })
 
-const twigLanguage = LRLanguage.define({ parser: mixedParser })
+const mdCriticLanguage = LRLanguage.define({ parser: mixedParser })
+```
+
+## Styling
+
+This language provides a set of tag-mappings so that highlight styles can
+directly provide appropriate styling. Please refer to the file `highlight.js` to
+see the up-to-date mapping. Here is an example of a barebones highlighting style
+that provides somewhat expected styles as of the time of writing:
+
+```ts
+import { HighlightStyle, syntaxHighlighting } from '@codemirror/language';
+
+const style = HighlightStyle.define([
+  { tag: tags.changed, color: 'yellow' },
+  { tag: tags.deleted, color: 'red', textDecoration: 'line-through' },
+  { tag: tags.inserted, color: 'green', textDecoration: 'underline' },
+  { tag: tags.separator, color: '#666', fontWeight: 'bold' },
+  { tag: tags.blockComment, color: 'cyan' },
+  { tag: tags.bracket, color: '#fff' },
+  { tag: tags.docComment, backgroundColor: 'yellow', color: 'black' }
+])
 ```
 
 ## Development
