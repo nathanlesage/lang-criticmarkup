@@ -1,5 +1,6 @@
 @detectDelim
 @top CriticMarkup { statement* }
+@external propSource criticHighlighting from "./highlight"
 
 statement {
   Addition | Deletion | Substitution | Highlight | Comment | content
