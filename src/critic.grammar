@@ -1,5 +1,5 @@
 @detectDelim
-@external propSource criticHighlighting from "./highlight"
+@external propSource criticHighlighting from "./highlight.js"
 @top CriticMarkup { statement* }
 
 statement {
