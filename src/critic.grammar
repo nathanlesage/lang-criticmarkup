@@ -3,14 +3,14 @@
 @top CriticMarkup { statement* }
 
 statement {
-  Addition | Deletion | Substitution | Highlight | Comment | content
+  Addition | Deletion | Substitution | Highlight | Comment | Content
 }
 
-Addition { AdditionStart content* AdditionEnd }
-Deletion { DeletionStart content* DeletionEnd }
-Substitution { SubstitutionStart content* SubstitutionMiddle content* SubstitutionEnd }
-Highlight { HighlightStart content* HighlightEnd }
-Comment { CommentStart content* CommentEnd }
+Addition { AdditionStart Content* AdditionEnd }
+Deletion { DeletionStart Content* DeletionEnd }
+Substitution { SubstitutionStart Content* SubstitutionMiddle Content* SubstitutionEnd }
+Highlight { HighlightStart Content* HighlightEnd }
+Comment { CommentStart Content* CommentEnd }
 
 @local tokens {
   AdditionStart { "{++" }
@@ -24,5 +24,5 @@ Comment { CommentStart content* CommentEnd }
   CommentEnd { "<<}" }
   HighlightStart { "{==" }
   HighlightEnd { "==}" }
-  @else content
+  @else Content
 }
