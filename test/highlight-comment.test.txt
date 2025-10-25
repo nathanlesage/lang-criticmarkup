@@ -5,7 +5,9 @@ This is some text {==with a single highlight==} but no comment.
 ==>
 
 CriticMarkup(
-  Highlight(HighlightStart, HighlightEnd)
+  Content,
+  Highlight(HighlightStart, Content, HighlightEnd),
+  Content
 )
 
 # Single comment, no highlight
@@ -15,7 +17,9 @@ This is some text with no highlight but a single comment{>>This is the comment<<
 ==>
 
 CriticMarkup(
-  Comment(CommentStart, CommentEnd)
+  Content,
+  Comment(CommentStart, Content, CommentEnd),
+  Content
 )
 
 # Highlight with a comment
@@ -25,6 +29,8 @@ This is some text {==with a single highlight==}{>>This is the comment<<} and a c
 ==>
 
 CriticMarkup(
-  Highlight(HighlightStart, HighlightEnd),
-  Comment(CommentStart, CommentEnd)
+  Content,
+  Highlight(HighlightStart, Content, HighlightEnd),
+  Comment(CommentStart, Content, CommentEnd),
+  Content
 )

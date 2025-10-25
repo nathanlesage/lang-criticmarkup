@@ -5,7 +5,9 @@ This is some document{-- with a deletion--}.
 ==>
 
 CriticMarkup(
-  Deletion(DeletionStart, DeletionEnd)
+  Content,
+  Deletion(DeletionStart, Content, DeletionEnd),
+  Content
 )
 
 # Incomplete deletion (end missing)
@@ -15,7 +17,8 @@ This is a document with {-- an incomplete deletion
 ==>
 
 CriticMarkup(
-  Deletion(DeletionStart,⚠)
+  Content
+  Deletion(DeletionStart,Content,⚠)
 )
 
 # Incomplete addition (start missing)
@@ -24,7 +27,7 @@ This is a document with an incomplete deletion--}
 
 ==>
 
-CriticMarkup(⚠(DeletionEnd))
+CriticMarkup(Content, ⚠(DeletionEnd))
 
 # Multiline deletion
 
@@ -35,5 +38,7 @@ This is a document with{--
 ==>
 
 CriticMarkup(
-  Deletion(DeletionStart, DeletionEnd)
+  Content,
+  Deletion(DeletionStart, Content, DeletionEnd),
+  Content
 )

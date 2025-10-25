@@ -5,7 +5,9 @@ This is some document{++ with an addition++}.
 ==>
 
 CriticMarkup(
-  Addition(AdditionStart, AdditionEnd)
+  Content,
+  Addition(AdditionStart, Content, AdditionEnd),
+  Content
 )
 
 # Incomplete addition (end missing)
@@ -15,7 +17,8 @@ This is a document with {++ an incomplete addition
 ==>
 
 CriticMarkup(
-  Addition(AdditionStart,⚠)
+  Content,
+  Addition(AdditionStart,Content,⚠)
 )
 
 # Incomplete addition (start missing)
@@ -24,7 +27,7 @@ This is a document with an incomplete addition++}
 
 ==>
 
-CriticMarkup(⚠(AdditionEnd))
+CriticMarkup(Content,⚠(AdditionEnd))
 
 # Multiline addition
 
@@ -35,5 +38,7 @@ This is a document with{++
 ==>
 
 CriticMarkup(
-  Addition(AdditionStart, AdditionEnd)
+  Content,
+  Addition(AdditionStart, Content, AdditionEnd),
+  Content
 )
